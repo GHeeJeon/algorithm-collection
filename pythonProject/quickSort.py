@@ -1,6 +1,6 @@
-def quick_sort(array, l, r):
-    if r > l:
-        v, i, j = array[r], l - 1, r
+def quick_sort(array, left, right):
+    if right > left:
+        v, i, j = array[right], left - 1, right
         while True:
             i += 1
             while array[i] < v:
@@ -11,7 +11,7 @@ def quick_sort(array, l, r):
             if i >= j:
                 break
             array[i], array[j] = array[j], array[i]
-        array[i], array[r] = array[r], array[i]
-        quick_sort(array, l, i - 1)
-        quick_sort(array, i + 1, r)
+        array[i], array[right] = array[right], array[i]
+        quick_sort(array, left, i - 1)
+        quick_sort(array, i + 1, right)
     return array
