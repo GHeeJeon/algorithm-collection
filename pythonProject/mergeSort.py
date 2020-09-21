@@ -1,3 +1,5 @@
+#TODO
+# fix warnings
 def merge_sort(array, brray, left, right):
     if right > left:
         middle = int((right + 1) / 2)
