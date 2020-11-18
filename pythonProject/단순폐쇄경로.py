@@ -7,7 +7,8 @@ def theta(p1, p2):
     dy = p2.y - p1.y
     ay = abs(dy)
     if ax + ay == 0:
-        t = 0
+        # t = 0
+        return 0
     else:
         t = dy / (ax + ay)
         if dx < 0:
@@ -19,11 +20,11 @@ def theta(p1, p2):
 
 def selection_sort(p, n):
     for i in range(1, n):
-        minIndex = i
+        min_index = i
         for j in range(i + 1, n + 1):
-            if theta(p[1], p[j]) < theta(p[1], p[minIndex]):
-                minIndex = j
-        p[minIndex], p[i] = p[i], p[minIndex]
+            if theta(p[1], p[j]) < theta(p[1], p[min_index]):
+                min_index = j
+        p[min_index], p[i] = p[i], p[min_index]
 
 
 N = 16
@@ -32,7 +33,7 @@ p.append(g.point(None, None, None))
 for i in range(N):
     p.append(g.point(g.x_value[i], g.y_value[i], g.c_value[i]))
 minIndex = 1
-for i in range(1, N+1):
+for i in range(2, N+1):
     if p[i].y < p[minIndex].y:
         minIndex = i
 p[minIndex], p[1] = p[1], p[minIndex]
